@@ -8,6 +8,21 @@
  * Service in the labcodesApp.
  */
 angular.module('labcodesApp')
-  .service('Requestapi', function () {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-  });
+  .service('Requestapi', ['$http', 'ApiConfig', function ($http, ApiConfig) {
+
+    var obj, apiUrl;
+
+    obj = {};
+    apiUrl = ApiConfig.API_URL;
+
+    obj.Tweets = function(callback) {
+      $http.get(apiUrl)
+        .then(function (data) {
+          callback(data);
+        }, function (error) {
+          callback(error);
+        });
+    };
+
+    return obj;
+  }]);

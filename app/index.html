@@ -2,9 +2,12 @@
 <html ng-app="labcodesApp">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <title>Labcodes - Teste</title>
+
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -33,7 +36,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">labcodes</a>
+            <a class="navbar-brand" href="#/">Labcodes</a>
           </div>
 
           <nav class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -48,7 +51,7 @@
     </header>
 
     <main class="container-fluid">
-      <div ng-view=""></div>
+      <div class="row" ng-view=""></div>
     </main>
 
     <footer class="footer">
@@ -88,9 +91,11 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/app.config.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/general.js"></script>
+        <script src="scripts/services/requestapi.js"></script>
         <!-- endbuild -->
 </body>
 </html>

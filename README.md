@@ -58,3 +58,8 @@ grunt serve # start the serve
 
 **p.s. be patient, type a command at a time !**
 
+## Some informations
+
+I prefer use the [Yeoman generator](https://github.com/yeoman/generator-angular), because with him, i have the better project control, organization and some points of productivity when i need create routes, services, controllers, etc.. 
+
+I have the basic for create a mvp, scalable product or an web app.

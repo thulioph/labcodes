@@ -7,15 +7,28 @@
   @extend .col-lg-offset-2;
   @extend .col-lg-8;
 
-  &:first-child {
-    margin-bottom: 60px;
-  }
+  &:first-child { margin-bottom: 60px; }
 }
 
 body {
   padding: 0;
   font-size: $fs-root;
   font-family: $ff-root;
+
+  @include transition(all, .25s, linear, 0s);
+
+  &.offline {
+    .tw-card-image { background-color: $offline-state; }
+
+    .tw-card-time { color: $offline-state; }
+    .tw-card-likes { color: $offline-state; }
+    .tw-card-tweet { color: $offline-state; }
+
+    .tw-card-location, .btn-default {
+      background-color: $offline-state;
+      border-color: $offline-state;
+    }
+  }
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

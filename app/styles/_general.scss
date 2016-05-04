@@ -31,6 +31,53 @@ body {
   }
 }
 
+.header-primary {
+  @extend .header;
+
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  nav {
+    @extend .pull-right;
+    @extend .collapse;
+    @extend .navbar-collapse;
+  }
+}
+
+.nav-list {
+  &.active {
+    a {
+      background-color: #70a83b !important;
+      color: #ffffff !important;
+    }
+  }
+
+  a {
+    background-color: #ffffff;
+    border-color: #609032;
+    color: #70a83b !important;
+
+    text-transform: uppercase;
+    font-weight: $fw-bold;
+    font-size: ($fs-normal) + .2;
+    text-transform: uppercase;
+  }
+}
+
+.footer-primary {
+  @extend .footer;
+
+  text-align: center;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  font-size: ($fs-normal) + .2;
+
+  .glyphicon-heart {
+    color: #f00;
+  }
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

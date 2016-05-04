@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularMoment',
+    'ngProgress'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -32,4 +34,39 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+  .run(['$window', '$rootScope', function ($window, $rootScope) {
+    // Offline
+    $rootScope.online = navigator.onLine;
+
+    $window.addEventListener("offline", function () {
+      $rootScope.$apply(function() {
+        $rootScope.online = false;
+        $rootScope.$emit('network_changed');
+      });
+    }, false);
+
+    $window.addEventListener("online", function () {
+      $rootScope.$apply(function() {
+        $rootScope.online = true;
+        $rootScope.$emit('network_changed');
+      });
+    }, false);
+
+    function _setOnlineStatus() {
+      console.log('online')
+    }
+
+    function _setOfflineStatus() {
+      console.log('offline')
+    }
+
+    $rootScope.$on('network_changed', function() {
+      if ($rootScope.online === true) {
+        _setOnlineStatus();
+      } else {
+        _setOfflineStatus();
+      }
+    })
+    // ====
+  }]);

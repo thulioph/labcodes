@@ -35,7 +35,7 @@ angular
         redirectTo: '/'
       });
   })
-  .run(['$window', '$rootScope', function ($window, $rootScope) {
+  .run(['$window', '$rootScope', 'ngProgressFactory', function ($window, $rootScope, ngProgressFactory) {
     // Offline
     $rootScope.online = navigator.onLine;
 
@@ -68,5 +68,12 @@ angular
         _setOfflineStatus();
       }
     })
+    // ====
+
+    // ====
+    // Create instance for progress bar
+    $rootScope.progressbar = ngProgressFactory.createInstance();
+    $rootScope.progressbar.setColor('#D03338');
+    $rootScope.progressbar.setHeight('4px');
     // ====
   }]);

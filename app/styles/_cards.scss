@@ -1,0 +1,129 @@
+//
+// Style for Cards
+//
+
+.wrp-main {
+  @extend .col-xs-12;
+  @extend .col-lg-offset-2;
+  @extend .col-lg-8;
+}
+
+.tw-card {
+  @extend .col-sm-6;
+  @extend .col-md-4;
+  @extend .col-lg-4;
+
+  position: relative;
+  margin-bottom: 40px;
+
+  &:hover {
+    .tw-card-time { color: #333333; }
+
+    .tw-card-image {
+      background-color: #212020;
+    }
+  }
+}
+
+.tw-card-image {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
+  background-color: #333333;
+
+  @include transition(background-color, .5s, ease-in-out, .1s);
+
+  img {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1;
+    border: 1px solid #f5f5f5;
+  }
+
+  figcaption {
+    font-size: ($fs-normal) + .3;
+    color: #f5f5f5;
+    position: absolute;
+    bottom: 12px;
+    left: 52px;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.tw-card-time {
+ color: #C3C3C3;
+  font-size: $fs-normal;
+  border-bottom: 1px solid #C3C3C3;
+  padding-bottom: 4px;
+  position: relative;
+
+  @include transition(color, .15s, ease, 0s);
+
+  &::before {
+    content: '\e062';
+    font-family: $ff-icon;
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.tw-card-likes {
+  color: #70a83b;
+  position: relative;
+  font-size: $fs-normal;
+
+  &::before {
+    content: "\e005";
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: $ff-icon;
+  }
+}
+
+.tw-card-tweet {
+  color: #333333;
+  font-size: ($fs-normal) + .2;
+}
+
+.tw-card-location {
+  background-color: #70a83b;
+  border: 1px solid #70a83b;
+  font-size: ($fs-normal);
+  text-align: center;
+  color: #ffffff;
+  padding: 5px;
+  outline: none;
+  width: 100%;
+
+  @include bdr(2px);
+  @include apr(none);
+
+  @include transition(all, .25s, ease-in-out, 0s);
+
+  &:hover {
+    background-color: #ffffff;
+    color: #70a83b;
+  }
+}
+
+// iPads
+@media screen and (min-width: 768px) {}
+
+// Desktops
+@media screen and (min-width: 992px) {}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+}

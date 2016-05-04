@@ -1,4 +1,4 @@
-<form name="twFilter">
+<form class="wrp-main" name="twFilter">
   <fieldset class="col-xs-12 form-group">
     <label for="tw-username">Filter by username</label>
     <br>
@@ -29,22 +29,18 @@
 
 <hr>
 
-<section class="col-xs-12 wrp-tweets" ng-init="getApiData()">
+<section class="wrp-main" ng-init="getApiData()">
   <article class="tw-card" ng-repeat="tw in tweets">
     <figure class="tw-card-image">
       <img ng-src="{{tw.user.picture}}" alt="{{tw.user.username}}">
+      <figcaption>{{tw.user.username}}</figcaption>
     </figure>
 
-    <h2 class="tw-card-username">{{tw.user.username}}</h2>
-
-    <p class="tw-card-content">{{tw.content}}</p>
-
     <aside class="tw-card-info">
-      <time datetime="2001-05-15T19:00">
-        {{tw.date | amDateFormat:'DD/MM/YYYY HH:mm'}}
-      </time>
-      <small>{{tw.user.location}}</small>
-      <span>{{tw.likes}}</span>
+      <time class="tw-card-time" datetime="2001-05-15T19:00">{{tw.date | amDurationFormat: 'minute'}} ago</time>
+      <h4 class="tw-card-likes">{{tw.likes}} likes</h4>
+      <p class="tw-card-tweet">{{tw.content}}</p>
+      <button class="tw-card-location">{{tw.user.location}}</button>
     </aside>
   </article>
 </section>

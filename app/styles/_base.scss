@@ -1,0 +1,203 @@
+//
+// Base styles
+// Variables, Mixins, Utilities
+//
+
+// Hexadecimals
+$green:                 #5ed6c3;
+$orange:                #ff6c36;
+$green-status:          #5b9d05;
+$blue-status:           #008ad9;
+$red-status:            #da1500;
+$dark-blue-menu:        #363f52;
+
+// RGB
+$green-rgb:             rgb(94, 214, 195);
+$orange-rgb:            rgb(255, 108, 54);
+$green-status-rgb:      rgb(91, 157, 5);
+$blue-status-rgb:       rgb(0, 138, 217);
+$red-status-rgb:        rgb(218, 21, 0);
+$dark-blue-menu-rgb:    rgb(54, 63, 82);
+
+// Variables
+$color-primary:         $green;
+$detail:                $orange;
+$status-g:              $green-status;
+$status-b:              $blue-status;
+$status-r:              $red-status;
+$bg-menu:               $dark-blue-menu;
+
+
+//
+// Background Images
+//
+
+@mixin path ($rulers...) {
+  background-image: url('../images/' + $rulers);
+}
+
+@mixin rgba ($rgbColor, $alpha) {
+  background-color: rgba($rgbColor, $alpha);
+}
+
+//
+// Gradient
+//
+
+@mixin linear-gradient ($angle, $startColor, $endColor) {
+  background-color: $startColor;
+  background-image: -webkit-linear-gradient($angle, $startColor, $endColor);
+  background-image:    -moz-linear-gradient($angle, $startColor, $endColor);
+  background-image:     -ms-linear-gradient($angle, $startColor, $endColor);
+  background-image:      -o-linear-gradient($angle, $startColor, $endColor);
+  background-image:         linear-gradient($angle, $startColor, $endColor);
+}
+
+@mixin linear-gradient-control($angle, $colour, $position, $colour2, $position2) {
+ background-color:  $colour;
+ background-image:  -webkit-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:    -moz-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:     -ms-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:      -o-linear-gradient($angle, $colour $position, $colour2 $position2);
+  background-image:          linear-gradient($angle, $colour $position, $colour2 $position2);
+}
+
+// Text Truncate
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Transition
+@mixin transition($property, $time, $method, $delay){
+  -webkit-transition: $property $time $method $delay;
+     -moz-transition: $property $time $method $delay;
+      -ms-transition: $property $time $method $delay;
+       -o-transition: $property $time $method $delay;
+          transition: $property $time $method $delay;
+}
+
+// Border-Radius
+@mixin bdr($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+//
+// Shadow
+//
+
+// box-shadow
+@mixin bsd($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+     -moz-box-shadow: $x $y $blur $color;
+      -ms-box-shadow: $x $y $blur $color;
+       -o-box-shadow: $x $y $blur $color;
+          box-shadow: $x $y $blur $color;
+}
+
+@mixin bsd-multiples($rulers...) {
+  -webkit-box-shadow: $rulers;
+     -moz-box-shadow: $rulers;
+      -ms-box-shadow: $rulers;
+       -o-box-shadow: $rulers;
+          box-shadow: $rulers;
+}
+
+// text-shadow
+@mixin tsd($x, $y, $blur, $color) {
+  -webkit-text-shadow: $x $y $blur $color;
+     -moz-text-shadow: $x $y $blur $color;
+      -ms-text-shadow: $x $y $blur $color;
+       -o-text-shadow: $x $y $blur $color;
+          text-shadow: $x $y $blur $color;
+}
+
+//
+// Translate
+//
+
+// translateY
+@mixin translateY($value) {
+  -webkit-transform: translateY($value);
+     -moz-transform: translateY($value);
+      -ms-transform: translateY($value);
+       -o-transform: translateY($value);
+          transform: translateY($value);
+}
+
+// translateX
+@mixin translateX($value) {
+  -webkit-transform: translateX($value);
+     -moz-transform: translateX($value);
+      -ms-transform: translateX($value);
+       -o-transform: translateX($value);
+          transform: translateX($value);
+}
+
+// translate3d
+@mixin translate3d($valueX, $valueY, $valueZ) {
+  -webkit-transform: translate3d($valueX, $valueY, $valueZ);
+     -moz-transform: translate3d($valueX, $valueY, $valueZ);
+      -ms-transform: translate3d($valueX, $valueY, $valueZ);
+       -o-transform: translate3d($valueX, $valueY, $valueZ);
+          transform: translate3d($valueX, $valueY, $valueZ);
+}
+
+// skew
+@mixin skew($rulers...) {
+  -webkit-transform: skew($rulers);
+     -moz-transform: skew($rulers);
+      -ms-transform: skew($rulers);
+       -o-transform: skew($rulers);
+          transform: skew($rulers);
+}
+
+// rotate
+@mixin rotate($value) {
+  -webkit-transform: rotate($value);
+     -moz-transform: rotate($value);
+      -ms-transform: rotate($value);
+       -o-transform: rotate($value);
+          transform: rotate($value);
+}
+
+// transform-origin
+@mixin origin($value) {
+  -webkit-transform-origin: $value;
+     -moz-transform-origin: $value;
+      -ms-transform-origin: $value;
+       -o-transform-origin: $value;
+          transform-origin: $value;
+}
+
+// scale
+@mixin scale3d($rulers...) {
+  -webkit-transform: scale($rulers);
+     -moz-transform: scale($rulers);
+      -ms-transform: scale($rulers);
+       -o-transform: scale($rulers);
+          transform: scale($rulers);
+}
+
+// animation
+@mixin animation($rulers...){
+  -webkit-animation: $rulers;
+     -moz-animation: $rulers;
+      -ms-animation: $rulers;
+       -o-animation: $rulers;
+          animation: $rulers;
+}
+
+// appearance
+@mixin apr($value) {
+  -webkit-appearance: $value;
+     -moz-appearance: $value;
+      -ms-appearance: $value;
+       -o-appearance: $value;
+          appearance: $value;
+}

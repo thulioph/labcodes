@@ -73,7 +73,7 @@ angular
     // ====
     // Create instance for progress bar
     $rootScope.progressbar = ngProgressFactory.createInstance();
-    $rootScope.progressbar.setColor('#D03338');
+    $rootScope.progressbar.setColor('#70a83b');
     $rootScope.progressbar.setHeight('4px');
     // ====
   }]);

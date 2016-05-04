@@ -1,0 +1,34 @@
+//
+// Typography styles
+//
+
+
+// Icon
+// $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// ==
+
+// Size - $fs
+$fs-root:           62.5%;
+$fs-normal:         1.2rem; // 12px, 13px, 14px, 16px, 18px
+$fs-medium:         2.0rem; // 20px, 22px, 24px
+// ====
+
+// Family - $ff
+$ff-root:           'Droid Sans', sans-serif;
+$ff-icon:           'Glyphicons Halflings';
+// ====
+
+// Weight - $fw
+$fw-regular :       400;
+$fw-bold:           700;
+// ====
+
+
+// iPads
+@media screen and (min-width: 768px) {}
+
+// Desktops
+@media screen and (min-width: 992px) {}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}

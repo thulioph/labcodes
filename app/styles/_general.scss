@@ -78,6 +78,39 @@ body {
   }
 }
 
+.sc-about {
+  margin-bottom: 50px;
+}
+
+.sc-title {
+  font-size: ($fs-medium) + 1;
+  text-transform: uppercase;
+
+  &::before {
+    font-family: $ff-icon;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: ($fs-normal) + .2;
+  }
+
+  &.mission {
+    &::before {
+      content: "\e013";
+    }
+  }
+}
+
+.sc-description {
+  font-size: ($fs-normal) + .4;
+  line-height: ($fs-medium) + 1.2;
+
+  b {
+    font-weight: $fw-bold;
+    color: #70a83b;
+  }
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

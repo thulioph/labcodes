@@ -3,12 +3,14 @@
   <form class="form-primary" name="twFilter">
     <fieldset class="wrp-input">
       <label for="tw-username">Filter by username:</label>
-      <input id="tw-username" placeholder="@nigga" type="text" ng-model="filterUsername">
+      <input id="tw-username" placeholder="@nigga" type="text" ng-model="username" ng-change="filter(username)">
     </fieldset>
 
     <fieldset class="wrp-input">
       <label for="tw-location">Filter by location:</label>
-      <select id="tw-location" ng-model="filterLocation" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)"></select>
+      <select id="tw-location" ng-model="filterLocation" ng-options="opt.location for opt in arrayLocations" ng-change="filter(filterLocation.location)">
+        <option value="">-- choose location --</option>
+      </select>
     </fieldset>
 
     <fieldset class="wrp-input">
@@ -26,7 +28,7 @@
 
 <!-- Tweets list -->
 <section class="wrp-main" ng-init="getApiData()">
-  <article class="tw-card" ng-repeat="tw in tweets | orderBy:sortType:sortReverse | filter:filterUsername">
+  <article class="tw-card" ng-repeat="tw in tweets | orderBy:sortType:sortReverse | filter:customFilter">
     <div class="tw-card-image">
       <aside id="#mini-map-{{$index}}" class="tw-card-map"></aside>
 

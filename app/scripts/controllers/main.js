@@ -40,8 +40,8 @@ angular.module('labcodesApp')
       })
     };
 
-    function _filterByLocation(params) {
-      console.log('location', params);
+    function _filter(params) {
+      $scope.customFilter = params;
     };
 
     function _initMap(params) {
@@ -93,8 +93,8 @@ angular.module('labcodesApp')
       _getApiData();
     };
 
-    $scope.filterByLocation = function(args) {
-      _filterByLocation(args);
+    $scope.filter = function(args) {
+      _filter(args);
     };
 
     $scope.$on('tweets_ok', function() {

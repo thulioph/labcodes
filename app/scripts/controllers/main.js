@@ -102,8 +102,6 @@ angular.module('labcodesApp')
     });
 
     $scope.showMap = function(address, id) {
-      console.log(address, id);
-
       var map, addr;
 
       map = $('#mini-map-' + id);

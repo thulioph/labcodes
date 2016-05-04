@@ -1,0 +1,61 @@
+//
+// Style for Forms
+//
+
+.form-primary {
+  @extend .row;
+}
+
+.wrp-input {
+  @extend .col-xs-12;
+  @extend .form-group;
+
+  label {
+    font-size: ($fs-normal) + .4;
+    color: #333333;
+    font-weight: $fw-bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  input, select {
+    @extend .form-control;
+
+    background-color: #d8d8d8;
+    padding: 20px;
+
+    &:focus {
+      border-color: #70a83b;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(112,168,59, 0.6);
+    }
+  }
+}
+
+.btn-default {
+  @extend .btn;
+  @extend .btn-primary;
+
+  @include bdr(3px);
+  background-color: #70a83b;
+  border-color: #609032;
+  padding: 5px 30px;
+  margin-right: 10px;
+
+  @include transition(all, .25s, linear, 0s);
+
+  &:hover {
+    background-color: #ffffff;
+    color: #609032;
+    border-color: #609032;
+  }
+}
+
+// iPads
+@media screen and (min-width: 768px) {}
+
+// Desktops
+@media screen and (min-width: 992px) {}
+
+// Large Desktops
+@media screen and (min-width: 1200px) {}

@@ -1,33 +1,27 @@
-<form class="wrp-main" name="twFilter">
-  <fieldset class="col-xs-12 form-group">
-    <label for="tw-username">Filter by username</label>
-    <br>
+<section class="wrp-main">
+  <form class="form-primary" name="twFilter">
+    <fieldset class="wrp-input">
+      <label for="tw-username">Filter by username:</label>
+      <input id="tw-username" placeholder="@nigga" type="text" ng-model="twFilter.username" ng-change="filterByUsername(twFilter.username)">
+    </fieldset>
 
-    <input class="form-control" id="tw-username" placeholder="@nigga" type="text" ng-model="twFilter.username" ng-change="filterByUsername(twFilter.username)">
-  </fieldset>
+    <fieldset class="wrp-input">
+      <label for="tw-location">Filter by location:</label>
+      <select id="tw-location" ng-model="twFilter.location" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)"></select>
+    </fieldset>
 
-  <fieldset class="col-xs-12 form-group">
-    <label for="tw-location">Filter by location</label>
-    <br>
+    <fieldset class="wrp-input">
+      <label for="">Reorder by: </label>
+      <button ng-click="orderBy('date')" class="btn-default" aria-label="Right Align">
+        Date <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+      </button>
 
-    <select class="form-control" id="tw-location" ng-model="twFilter.location" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)"></select>
-  </fieldset>
-
-  <fieldset class="col-xs-12 form-group">
-    <label for="">Reorder by: </label>
-    <br>
-
-    <button ng-click="orderBy('date')" class="btn btn-primary" aria-label="Right Align">
-      Date <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-    </button>
-
-    <button ng-click="orderBy('likes')" class="btn btn-primary" aria-label="Right Align">
-      Likes <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-    </button>
-  </fieldset>
-</form>
-
-<hr>
+      <button ng-click="orderBy('likes')" class="btn-default" aria-label="Right Align">
+        Likes <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      </button>
+    </fieldset>
+  </form>
+</section>
 
 <section class="wrp-main" ng-init="getApiData()">
   <article class="tw-card" ng-repeat="tw in tweets">

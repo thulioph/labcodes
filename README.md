@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Labcodes
 
 > test

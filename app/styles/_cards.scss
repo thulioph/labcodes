@@ -10,6 +10,9 @@
   position: relative;
   margin-bottom: 40px;
 
+  // initial animation
+  @include animation(bounce 1s ease-in-out);
+
   &:hover {
     .tw-card-time { color: #333333; }
 

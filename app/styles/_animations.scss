@@ -1,0 +1,45 @@
+//
+// Animations
+//
+
+@keyframes bounce {
+  0% {@include rotate(0deg);}
+  25% {@include rotate(5deg);}
+  50% {@include rotate(-5deg);}
+  75% {@include rotate(5deg);}
+  100% {@include rotate(0deg);}
+}
+
+@-webkit-keyframes bounce {
+  0% {@include rotate(0deg);}
+  25% {@include rotate(5deg);}
+  50% {@include rotate(-5deg);}
+  75% {@include rotate(5deg);}
+  100% {@include rotate(0deg);}
+}
+
+
+@-moz-keyframes bounce {
+  0% {@include rotate(0deg);}
+  25% {@include rotate(5deg);}
+  50% {@include rotate(-5deg);}
+  75% {@include rotate(5deg);}
+  100% {@include rotate(0deg);}
+}
+
+@-o-keyframes bounce {
+  0% {@include rotate(0deg);}
+  25% {@include rotate(5deg);}
+  50% {@include rotate(-5deg);}
+  75% {@include rotate(5deg);}
+  100% {@include rotate(0deg);}
+}
+
+
+@-ms-keyframes bounce {
+  0% {@include rotate(0deg);}
+  25% {@include rotate(5deg);}
+  50% {@include rotate(-5deg);}
+  75% {@include rotate(5deg);}
+  100% {@include rotate(0deg);}
+}

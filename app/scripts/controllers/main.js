@@ -94,7 +94,9 @@ angular.module('labcodesApp')
     };
 
     $scope.filter = function(args) {
+      $scope.progressbar.start();
       _filter(args);
+      $scope.progressbar.complete();
     };
 
     $scope.$on('tweets_ok', function() {

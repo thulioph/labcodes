@@ -6,9 +6,7 @@
 
   <fieldset class="col-xs-12 form-group">
     <label for="tw-location">Filter by location</label>
-    <input id="tw-location" class="form-control" placeholder="New york, New york.." type="text" ng-model="twFilter.location">
-
-    <!-- <select id="tw-location" ng-model="twFilter.id" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.id)" ></select> -->
+    <select id="tw-location" ng-model="twFilter.location" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)" ></select>
   </fieldset>
 
   <fieldset class="col-xs-12 form-group">

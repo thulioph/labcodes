@@ -41,7 +41,7 @@ angular.module('labcodesApp')
     };
 
     function _filterByLocation(location) {
-      console.log(location)
+      console.log('location', location)
     };
     // ====
 

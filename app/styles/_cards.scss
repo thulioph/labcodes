@@ -22,6 +22,24 @@
   }
 }
 
+.tw-card-map {
+  height: 100%;
+  width: 100%;
+
+  // &::before {
+  //   content: '';
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   z-index: 1;
+  //   border: 1px solid #333333;
+
+  //   @include rgba($dark-clean-rgb, .9);
+  // }
+}
+
 .tw-card-image {
   width: 100%;
   height: 100px;

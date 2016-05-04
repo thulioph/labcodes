@@ -27,17 +27,21 @@
 <!-- Tweets list -->
 <section class="wrp-main" ng-init="getApiData()">
   <article class="tw-card" ng-repeat="tw in tweets | orderBy:sortType:sortReverse | filter:filterUsername">
-    <figure class="tw-card-image">
-      <img ng-src="{{tw.user.picture}}" alt="{{tw.user.username}}">
-      <figcaption>{{tw.user.username}}</figcaption>
-    </figure>
+    <div class="tw-card-image">
+      <aside id="#mini-map-{{$index}}" class="tw-card-map"></aside>
 
-    <aside class="tw-card-info">
+      <figure>
+        <img ng-src="{{tw.user.picture}}" alt="{{tw.user.username}}">
+        <figcaption>{{tw.user.username}}</figcaption>
+      </figure>
+    </div>
+
+    <div class="tw-card-info">
       <time class="tw-card-time" datetime="2001-05-15T19:00">{{tw.date | amDurationFormat: 'minute'}} ago</time>
       <h4 class="tw-card-likes">{{tw.likes}} likes</h4>
       <p class="tw-card-tweet">{{tw.content}}</p>
-      <button class="tw-card-location">{{tw.user.location}}</button>
-    </aside>
+      <button class="tw-card-location" ng-click="showMap(tw.user.location, $index)">{{tw.user.location}}</button>
+    </div>
   </article>
 </section>
 

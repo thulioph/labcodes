@@ -44,7 +44,7 @@
 
   @include transition(all, .25s, linear, 0s);
 
-  &:hover {
+  &:hover, &:focus, &:active {
     background-color: #ffffff;
     color: #609032;
     border-color: #609032;

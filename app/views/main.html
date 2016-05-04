@@ -1,3 +1,4 @@
+<!-- Form -->
 <section class="wrp-main">
   <form class="form-primary" name="twFilter">
     <fieldset class="wrp-input">
@@ -23,6 +24,7 @@
   </form>
 </section>
 
+<!-- Tweets list -->
 <section class="wrp-main" ng-init="getApiData()">
   <article class="tw-card" ng-repeat="tw in tweets | orderBy:sortType:sortReverse | filter:filterUsername">
     <figure class="tw-card-image">
@@ -38,3 +40,6 @@
     </aside>
   </article>
 </section>
+
+<!-- Modals -->
+<div ng-include src="'views/modals/offline-modal.html'"></div>

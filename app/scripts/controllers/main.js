@@ -40,16 +40,8 @@ angular.module('labcodesApp')
       })
     };
 
-    function _filterByUsername(params) {
-      console.log('username', params);
-    };
-
     function _filterByLocation(params) {
       console.log('location', params);
-    };
-
-    function _orderBy(params) {
-      console.log('orderby', params);
     };
     // ====
 
@@ -63,16 +55,8 @@ angular.module('labcodesApp')
       _getApiData();
     };
 
-    $scope.filterByUsername = function(args) {
-      _filterByUsername(args);
-    };
-
     $scope.filterByLocation = function(args) {
       _filterByLocation(args);
-    };
-
-    $scope.orderBy = function(args) {
-      _orderBy(args);
     };
 
     $scope.$on('tweets_ok', function() {

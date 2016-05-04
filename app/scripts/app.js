@@ -54,11 +54,13 @@ angular
     }, false);
 
     function _setOnlineStatus() {
-      console.log('online')
     }
 
     function _setOfflineStatus() {
-      console.log('offline')
+      var offlineModal;
+
+      offlineModal = document.querySelector('#offline-modal');
+      $(offlineModal).modal('show');
     }
 
     $rootScope.$on('network_changed', function() {

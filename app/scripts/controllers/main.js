@@ -15,19 +15,34 @@ angular.module('labcodesApp')
 
     // Get api data
     function _getApiData() {
-      var tweets;
+      var tweets, locations;
+
+      locations = [];
 
       Requestapi.Tweets(function(data) {
         if (data.status === 200) {
           tweets = data.data;
           $scope.tweets = tweets;
 
+          angular.forEach(tweets, function(tw) {
+            locations.push({
+              id: tw.user.id,
+              location: tw.user.location
+            });
+          });
+
+          $scope.arrayLocations = locations;
+
           $scope.$broadcast('tweets_ok');
         } else {
           console.warn(data.status);
         }
       })
-    }
+    };
+
+    function _filterByLocation(location) {
+      console.log(location)
+    };
     // ====
 
 
@@ -38,6 +53,10 @@ angular.module('labcodesApp')
       $scope.progressbar.start();
 
       _getApiData();
+    };
+
+    $scope.filterByLocation = function(location) {
+      _filterByLocation(location);
     };
 
     $scope.$on('tweets_ok', function() {

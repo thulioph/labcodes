@@ -2,21 +2,21 @@
   <form class="form-primary" name="twFilter">
     <fieldset class="wrp-input">
       <label for="tw-username">Filter by username:</label>
-      <input id="tw-username" placeholder="@nigga" type="text" ng-model="twFilter.username" ng-change="filterByUsername(twFilter.username)">
+      <input id="tw-username" placeholder="@nigga" type="text" ng-model="filterUsername">
     </fieldset>
 
     <fieldset class="wrp-input">
       <label for="tw-location">Filter by location:</label>
-      <select id="tw-location" ng-model="twFilter.location" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)"></select>
+      <select id="tw-location" ng-model="filterLocation" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)"></select>
     </fieldset>
 
     <fieldset class="wrp-input">
-      <label for="">Reorder by: </label>
-      <button ng-click="orderBy('date')" class="btn-default" aria-label="Right Align">
+      <label>Reorder by: </label>
+      <button ng-click="sortType = 'date'" class="btn-default" aria-label="Right Align">
         Date <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
       </button>
 
-      <button ng-click="orderBy('likes')" class="btn-default" aria-label="Right Align">
+      <button ng-click="sortType = 'likes'" class="btn-default" aria-label="Right Align">
         Likes <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
       </button>
     </fieldset>
@@ -24,7 +24,7 @@
 </section>
 
 <section class="wrp-main" ng-init="getApiData()">
-  <article class="tw-card" ng-repeat="tw in tweets">
+  <article class="tw-card" ng-repeat="tw in tweets | orderBy:sortType:sortReverse | filter:filterUsername">
     <figure class="tw-card-image">
       <img ng-src="{{tw.user.picture}}" alt="{{tw.user.username}}">
       <figcaption>{{tw.user.username}}</figcaption>

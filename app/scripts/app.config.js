@@ -6,5 +6,6 @@ angular.module('labcodesApp')
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
 }])
 .constant('ApiConfig', {
-    'API_URL': 'scripts/assets/timeline.json'
+    'API_URL': 'scripts/assets/timeline.json',
+    'GITHUB_URL': 'https://raw.githubusercontent.com/thulioph/labcodes/master/app/scripts/assets/timeline.json',
 });

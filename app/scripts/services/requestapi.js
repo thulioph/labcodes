@@ -10,13 +10,14 @@
 angular.module('labcodesApp')
   .service('Requestapi', ['$http', 'ApiConfig', function ($http, ApiConfig) {
 
-    var obj, apiUrl;
+    var obj, apiUrl, githubUrl;
 
     obj = {};
     apiUrl = ApiConfig.API_URL;
+    githubUrl = ApiConfig.GITHUB_URL;
 
     obj.Tweets = function(callback) {
-      $http.get(apiUrl)
+      $http.get(githubUrl)
         .then(function (data) {
           callback(data);
         }, function (error) {

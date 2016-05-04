@@ -1,17 +1,29 @@
 <form name="twFilter">
   <fieldset class="col-xs-12 form-group">
     <label for="tw-username">Filter by username</label>
-    <input class="form-control" id="tw-username" placeholder="@nigga" type="text" ng-model="twFilter.username">
+    <br>
+
+    <input class="form-control" id="tw-username" placeholder="@nigga" type="text" ng-model="twFilter.username" ng-change="filterByUsername(twFilter.username)">
   </fieldset>
 
   <fieldset class="col-xs-12 form-group">
     <label for="tw-location">Filter by location</label>
-    <select id="tw-location" ng-model="twFilter.location" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)" ></select>
+    <br>
+
+    <select class="form-control" id="tw-location" ng-model="twFilter.location" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.location)"></select>
   </fieldset>
 
   <fieldset class="col-xs-12 form-group">
-    <button class="btn btn-primary">reorder by date</button>
-    <button class="btn btn-danger">reorder by likes</button>
+    <label for="">Reorder by: </label>
+    <br>
+
+    <button ng-click="orderBy('date')" class="btn btn-primary" aria-label="Right Align">
+      Date <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+    </button>
+
+    <button ng-click="orderBy('likes')" class="btn btn-primary" aria-label="Right Align">
+      Likes <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    </button>
   </fieldset>
 </form>
 

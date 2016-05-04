@@ -1,3 +1,40 @@
-<section class="col-xs-12" ng-init="getApiData()">
-  {{tweets}}
+<form name="twFilter">
+  <fieldset class="col-xs-12 form-group">
+    <label for="tw-username">Filter by username</label>
+    <input class="form-control" id="tw-username" placeholder="@nigga" type="text" ng-model="twFilter.username">
+  </fieldset>
+
+  <fieldset class="col-xs-12 form-group">
+    <label for="tw-location">Filter by location</label>
+    <input id="tw-location" class="form-control" placeholder="New york, New york.." type="text" ng-model="twFilter.location">
+
+    <!-- <select id="tw-location" ng-model="twFilter.id" ng-options="option.id as option.location for option in arrayLocations" ng-change="filterByLocation(option.id)" ></select> -->
+  </fieldset>
+
+  <fieldset class="col-xs-12 form-group">
+    <button class="btn btn-primary">reorder by date</button>
+    <button class="btn btn-danger">reorder by likes</button>
+  </fieldset>
+</form>
+
+<hr>
+
+<section class="col-xs-12 wrp-tweets" ng-init="getApiData()">
+  <article class="tw-card" ng-repeat="tw in tweets">
+    <figure class="tw-card-image">
+      <img ng-src="{{tw.user.picture}}" alt="{{tw.user.username}}">
+    </figure>
+
+    <h2 class="tw-card-username">{{tw.user.username}}</h2>
+
+    <p class="tw-card-content">{{tw.content}}</p>
+
+    <aside class="tw-card-info">
+      <time datetime="2001-05-15T19:00">
+        {{tw.date | amDateFormat:'DD/MM/YYYY HH:mm'}}
+      </time>
+      <small>{{tw.user.location}}</small>
+      <span>{{tw.likes}}</span>
+    </aside>
+  </article>
 </section>

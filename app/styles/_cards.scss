@@ -69,7 +69,7 @@
   @include transition(color, .15s, ease, 0s);
 
   &::before {
-    content: '\e062';
+    content: '\e109';
     font-family: $ff-icon;
     display: inline-block;
     margin-right: 5px;

@@ -39,7 +39,7 @@
     </div>
 
     <div class="tw-card-info">
-      <time class="tw-card-time" datetime="2001-05-15T19:00">{{tw.date | amDurationFormat: 'minute'}} ago</time>
+      <time class="tw-card-time" datetime="{{ tw.date | amUtc | amLocal | amDateFormat:'DD/MM/YYYY' }}">{{tw.date | amDateFormat:'dddd, MMMM Do YYYY'}}</time>
       <h4 class="tw-card-likes">{{tw.likes}} likes</h4>
       <p class="tw-card-tweet">{{tw.content}}</p>
       <button class="tw-card-location" ng-click="showMap(tw.user.location, $index)">{{tw.user.location}}</button>

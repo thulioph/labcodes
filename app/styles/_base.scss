@@ -4,13 +4,34 @@
 //
 
 // Hexadecimals
-$dark-clean:            #695E5E;
+$brown:               #695E5E;
+$white:               #FFFFFF;
+$white-clean:         #F5F5F5;
+$green:               #70A83B;
+$green-dark:          #609032;
+$black:               #212020;
+$black-clean:         #333333;
+$gray-clean:          #D8D8D8;
 
 // RGB
-$dark-clean-rgb:        rgb(105,94,94);
+$brown-rgb:           rgb(105,94,94);
+$white-rgb:           rgb(255, 255, 255);
+$white-clean-rgb:     rgb(245,245,245);
+$green-rgb:           rgb(112,168,59);
+$green-dark-rgb:      rgb(96,144,50);
+$black-rgb:           rgb(33,32,32);
+$black-clean-rgb:     rgb(51,51,51);
+$gray-clean-rgb:      rgb(216,216,216);
 
 // Variables
-$offline-state:         $dark-clean;
+$offline-state:       $brown;
+$color-clean:         $white;
+$border-secondary:    $white-clean;
+$color-primary:       $green;
+$border-primary:      $green-dark;
+$color-dark:          $black;
+$color-dark-clean:    $black-clean;
+$bg-input:            $gray-clean-rgb;
 
 
 //

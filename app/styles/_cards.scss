@@ -14,11 +14,9 @@
   @include animation(bounce 1s ease-in-out);
 
   &:hover {
-    .tw-card-time { color: #333333; }
+    .tw-card-time { color: $color-dark; }
 
-    .tw-card-image {
-      background-color: #212020;
-    }
+    .tw-card-image { background-color: $color-dark-clean; }
   }
 }
 
@@ -33,7 +31,7 @@
   margin-bottom: 15px;
   overflow: hidden;
   position: relative;
-  background-color: #333333;
+  background-color: $color-dark;
 
   @include transition(background-color, .5s, ease-in-out, .1s);
 
@@ -44,15 +42,16 @@
     bottom: 10px;
     left: 10px;
     z-index: 1;
-    border: 1px solid #f5f5f5;
+    border: 1px solid $border-secondary;
   }
 
   figcaption {
     font-size: ($fs-normal) + .3;
-    color: #f5f5f5;
+    color: $border-secondary;
     position: absolute;
     bottom: 12px;
     left: 52px;
+
     &:first-letter {
       text-transform: uppercase;
     }
@@ -77,7 +76,7 @@
 }
 
 .tw-card-likes {
-  color: #70a83b;
+  color: $color-primary;
   position: relative;
   font-size: $fs-normal;
 
@@ -91,16 +90,16 @@
 }
 
 .tw-card-tweet {
-  color: #333333;
+  color: $color-dark;
   font-size: ($fs-normal) + .2;
 }
 
 .tw-card-location {
-  background-color: #70a83b;
-  border: 1px solid #70a83b;
+  background-color: $color-primary;
+  border: 1px solid $color-primary;
   font-size: ($fs-normal);
   text-align: center;
-  color: #ffffff;
+  color: $color-clean;
   padding: 5px;
   outline: none;
   width: 100%;
@@ -111,8 +110,8 @@
   @include transition(all, .25s, ease-in-out, 0s);
 
   &:hover {
-    background-color: #ffffff;
-    color: #70a83b;
+    background-color: $color-clean;
+    color: $color-primary;
   }
 }
 

@@ -29,6 +29,8 @@ angular.module('labcodesApp')
               id: tw.user.id,
               location: tw.user.location
             });
+
+            tw.rate = 0;
           });
 
           $scope.arrayLocations = locations;
@@ -81,6 +83,16 @@ angular.module('labcodesApp')
         }
       });
     };
+
+    function _rating() {
+     $scope.rate = 0;
+     $scope.max = 5;
+     $scope.isReadonly = false;
+
+      $scope.hoveringOver = function(value) {
+        $scope.twRate = value;
+      };
+    }
     // ====
 
 
@@ -114,6 +126,12 @@ angular.module('labcodesApp')
       $scope.$on('map_ok', function() {
         _showMap(addr);
       })
+    };
+
+    _rating();
+
+    $scope.setRating = function(obj) {
+      obj.rate = $scope.twRate;
     };
     // ====
 

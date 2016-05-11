@@ -59,7 +59,7 @@
 }
 
 .tw-card-time {
- color: #C3C3C3;
+  color: #C3C3C3;
   font-size: $fs-normal;
   border-bottom: 1px solid #C3C3C3;
   padding-bottom: 4px;
@@ -87,6 +87,10 @@
     vertical-align: middle;
     font-family: $ff-icon;
   }
+}
+
+.tw-card-rating {
+  font-size: ($fs-normal);
 }
 
 .tw-card-tweet {

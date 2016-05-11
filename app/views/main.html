@@ -22,6 +22,10 @@
       <button ng-click="sortType = 'likes'; sortReverse = !sortReverse" class="btn-default" aria-label="Right Align">
         Likes <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
       </button>
+
+      <button ng-click="sortType = 'rate'; sortReverse = !sortReverse" class="btn-default" aria-label="Right Align">
+        Rating <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      </button>
     </fieldset>
   </form>
 </section>
@@ -41,6 +45,11 @@
     <div class="tw-card-info">
       <time class="tw-card-time" datetime="{{ tw.date | amUtc | amLocal | amDateFormat:'DD/MM/YYYY' }}">{{tw.date | amDateFormat:'dddd, MMMM Do YYYY'}}</time>
       <h4 class="tw-card-likes">{{tw.likes}} likes</h4>
+
+      <div class="tw-card-rating">
+        <uib-rating ng-model="tw.rate" max="max" read-only="isReadonly" ng-click="setRating(tw)" on-hover="hoveringOver(value, tw)" on-leave="overStar = null" titles="" aria-labelledby="default-rating"></uib-rating>
+      </div>
+
       <p class="tw-card-tweet">{{tw.content}}</p>
       <button class="tw-card-location" ng-click="showMap(tw.user.location, $index)">{{tw.user.location}}</button>
     </div>

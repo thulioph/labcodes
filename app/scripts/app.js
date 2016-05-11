@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'angularMoment',
-    'ngProgress'
+    'ngProgress',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
